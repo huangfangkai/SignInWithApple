@@ -29,14 +29,13 @@
     if (@available(iOS 13.0, *)) {
         // Sign In With Apple Button
         ASAuthorizationAppleIDButton *btn_apple = [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeDefault style:ASAuthorizationAppleIDButtonStyleWhite];
-        btn_apple.frame = CGRectMake(50, 100,  250, 100);
+        btn_apple.frame = CGRectMake(50, 100,  self.view.bounds.size.width - 100, 100);
         [btn_apple addTarget:self action:@selector(signWithApple:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn_apple];
     }
-    
     // 或者自己用UIButton实现按钮样式
     UIButton *btn_custom = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn_custom.frame = CGRectMake(50, 250, 150, 44);
+    btn_custom.frame = CGRectMake(50, 250, self.view.bounds.size.width - 100, 44);
     [btn_custom setTitle:@"Sign in with Apple" forState:UIControlStateNormal];
     [btn_custom setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
 
